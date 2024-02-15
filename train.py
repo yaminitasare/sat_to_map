@@ -2,9 +2,9 @@ import matplotlib.pyplot as plt
 from IPython import display
 import matplotlib.pyplot as plt
 from make_train_step import generate_images
-from make_generetor import my_generator
+from make_generetor import generator
 from make_train_step import train_step
-generator = my_generator()
+generator = generator()
 
 import time
 def fit(train_ds, test_ds, steps):
