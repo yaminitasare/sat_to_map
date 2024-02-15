@@ -1,13 +1,13 @@
-from make_discriminator import my_discriminator
+from make_discriminator import Discriminator
 from make_discriminator import discriminator_loss
-from make_generetor import my_generator
+from make_generetor import generator
 from make_generetor import generator_loss
 import tensorflow as tf
 import matplotlib.pyplot as plt
 generator_optimizer = tf.keras.optimizers.Adam(2e-4, beta_1=0.5)
 discriminator_optimizer = tf.keras.optimizers.Adam(2e-4, beta_1=0.5)
-discriminator = my_discriminator()
-generator = my_generator()
+discriminator = Discriminator()
+generator = generator()
 @tf.function
 def train_step(input_image, target, step):
     with tf.GradientTape() as gen_tape, tf.GradientTape() as disc_tape:
@@ -41,4 +41,4 @@ def generate_images(model, test_input, tar):
     plt.title(title[i])
     plt.imshow(display_list[i] * 0.5 + 0.5)
     plt.axis('off')
-  plt.show()    
+  plt.show()
