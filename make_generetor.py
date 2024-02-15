@@ -79,9 +79,7 @@ def generator():
     return tf.keras.Model(inputs, conv_trans8)
 
 
-def my_generator():
-    generator = generator()
-    return generator
+
 
 
 # LAMBDA = 100
